@@ -8,6 +8,20 @@ class ExploreScreen extends StatefulWidget {
   State<ExploreScreen> createState() => _ExploreScreenState();
 }
 
+List<Map<String, dynamic>> tasks = [
+  {'task': 'Learn English', 'isChecked': false},
+  {'task': 'Study programming', 'isChecked': false},
+  {'task': 'Sports', 'isChecked': false},
+  {'task': 'Reading Al Quran', 'isChecked': false},
+  {'task': 'reading book', 'isChecked': false},
+  {'task': 'Watch movie', 'isChecked': false},
+  {'task': 'Shower', 'isChecked': false},
+  {'task': 'Play games', 'isChecked': false},
+  {'task': 'Relaxation', 'isChecked': false},
+  {'task': 'reading book', 'isChecked': false}
+];
+
+
 class _ExploreScreenState extends State<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
@@ -172,50 +186,17 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ),
                 ),
               ),
-              ContinerTask(
-                text: 'Learn English',
+              Column(
+                children: tasks.map((task) => Padding(
+                      padding: const EdgeInsets.only(bottom: 15),
+                      child: ContinerTask(
+                        text: task['task'],
+                        color: task['isChecked']
+                            ? const Color.fromRGBO(255, 255, 255, 1)
+                            : const Color.fromRGBO(255, 255, 255, 1),
+                      ),
+                    )).toList(),
               ),
-              const SizedBox(height: 15),
-              ContinerTask(
-                text: 'Study programming',
-              ),
-              const SizedBox(height: 15),
-              ContinerTask(
-                text: 'Sports',
-              ),
-              const SizedBox(height: 15),
-              ContinerTask(
-                text: 'Reading Al Quran',
-              ),
-              const SizedBox(height: 15),
-              ContinerTask(
-                text: 'reading book',
-              ),
-              const SizedBox(height: 15),
-              ContinerTask(
-                text: 'Watch movie',
-              ),
-              const SizedBox(height: 15),
-              ContinerTask(
-                text: 'Shower',
-                color: Colors.grey,
-              ),
-              const SizedBox(height: 15),
-              ContinerTask(
-                text: 'Play games',
-                color: Colors.grey,
-              ),
-              const SizedBox(height: 15),
-              ContinerTask(
-                text: 'Relaxation',
-                color: Colors.grey,
-              ),
-              const SizedBox(height: 15),
-              ContinerTask(
-                text: 'reading book',
-                color: Colors.grey,
-              ),
-              const SizedBox(height: 15),
             ],
           ),
         ),
