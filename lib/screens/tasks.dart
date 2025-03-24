@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
+import '../widgets/task_widgets.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
@@ -26,19 +28,19 @@ class _ExploreScreenState extends State<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.grey.shade200,
-        animationDuration: const Duration(milliseconds: 250), // تسريع الانتقال
-        animationCurve: Curves.easeInOut, // جعل الحركة أكثر سلاسة
-        items: const <Widget>[
-          Icon(Icons.task),
-          Icon(Icons.business_center),
-        ],
-        onTap: (index) {
-          // Handle button tap
-        },
-      ),
-      backgroundColor: Colors.grey[200],
+      // bottomNavigationBar: CurvedNavigationBar(
+      //   backgroundColor: Colors.grey.shade200,
+      //   animationDuration: const Duration(milliseconds: 250), // تسريع الانتقال
+      //   animationCurve: Curves.easeInOut, // جعل الحركة أكثر سلاسة
+      //   items: const <Widget>[
+      //     Icon(Icons.task),
+      //     Icon(Icons.business_center),
+      //   ],
+      //   onTap: (index) {
+      //     // Handle button tap
+      //   },
+      // ),
+      // backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -96,20 +98,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   color: Colors.black.withValues(alpha: 170), // 0.3 * 255 ≈ 77
                   spreadRadius: 1,
                   blurRadius: 5,
-                  offset: const Offset(0, 4),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
-            child: CircleAvatar(
-              backgroundColor: Colors.white,
-              child: IconButton(
-                icon: const Icon(Icons.person, color: Colors.deepPurpleAccent),
-                tooltip: 'Open shopping cart',
-                onPressed: () {
-                  // handle the press
-                },
-              ),
-            ),
+            child: TaskWidgets.taskCard(),
           ),
         ],
       ),
